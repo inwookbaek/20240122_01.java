@@ -1,0 +1,57 @@
+package com.lec.ex01_basic;
+
+import java.sql.Connection;
+
+/*
+	JDBC를 이용한 Java와 DB 연동하기
+	
+	Java와 DB를 연동하기위해서는 각 RDBMS의 버전에 맞는 JRE실행환경 라이브러리를 Java프로젝트에
+	추가해야 한다. JDBC드라이버는 DB버전에 맞는 JDBC드라이버(오라클은 ojdbc8.jar등을)를 추가해야 한다.
+	(Oracle JDBC의 버전별 참고 사이트 https://oingdaddy.tistory.com/372)
+	
+	A. 라이브러리를 추가하는 방법
+	   1. Java Project 우클릴
+	   2. Build Path > Add Build Path
+	      or Build Path > Configure Build Path >(tab)Libraries > (button) Add Jars... > (button) Apply & Close
+	      
+    B. JDBC 프로그램 작성단계
+    
+       1. JDBC 드라이버 로딩(DB에 따라 드라이버가 상이)
+          
+          a. Oracle  : Class.forName("oracle.jdbc.OracleDriver")
+          b. mariadb : Class.forName("org.mariadb.jdbc.Driver") 
+          c. mysql   : Class.forName("com.mysql.jdbc.Driver") 
+          
+          * Class.forName()메서드는 클래스파일(*.class)파일을 읽어서
+            자동으로 객체를 생성해주는 메서드이다. 
+            DB드라이버를 로딩하면 DriverManager에 등록이 된다.
+            
+       2. Connection객체를 생성
+       
+          Connection객체에 연결하는 것은 DriverManager에 등록된 각 드라이버를 
+          getConnection()메서드를 이용해서 식별한다.
+          getConnection의 매개값은 'DB의 URL주소, 사용자ID, 비밀번호'를 전달한다.
+          연결할 떄 url식별자정보를 이요해서 Mapping을 하고 찾지 못했을 경우에는 
+          에러가 발생한다. getConnction()메서드의 결과는 Connection객체로 리턴한다.
+          
+          
+*/
+public class JDBCConnection {
+
+	final static String DRV = "oracle.jdbc.OracleDriver";
+	
+	public static void main(String[] args) {
+
+		try {
+			Class.forName(DRV);
+			Connection conn = 
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

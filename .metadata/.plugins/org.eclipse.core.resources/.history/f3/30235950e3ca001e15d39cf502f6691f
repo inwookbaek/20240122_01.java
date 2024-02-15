@@ -1,0 +1,16 @@
+package com.lec.ex01_basic;
+
+/*
+	JDBC를 이용한 Java와 DB 연동하기
+	
+	Java와 DB를 연동하기위해서는 각 RDBMS의 버전에 맞는 JRE실행환경 라이브러리를 Java프로젝트에
+	추가해야 한다. JDBC드라이버는 DB버전에 맞는 JDBC드라이버(오라클은 ojdbc8.jar등을)를 추가해야 한다.
+	(Oracle JDBC의 버전별 참고 사이트 https://oingdaddy.tistory.com/372)
+*/
+public class JDBCConnection {
+
+	public static void main(String[] args) {
+
+	}
+
+}

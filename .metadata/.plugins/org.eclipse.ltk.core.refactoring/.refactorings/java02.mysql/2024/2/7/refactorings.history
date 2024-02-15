@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;JDBCConnection.java&apos; to &apos;java03.mariadb/src/com.lec.mariadb&apos;&#x0D;&#x0A;- Original project: &apos;java02.mysql&apos;&#x0D;&#x0A;- Destination element: &apos;java03.mariadb/src/com.lec.mariadb&apos;&#x0D;&#x0A;- Original element: &apos;com.lec.basic.JDBCConnection.java&apos;" description="Copy compilation unit" destination="=java03.mariadb/src&lt;com.lec.mariadb" element1="/src&lt;com.lec.basic{JDBCConnection.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1707960067165" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,112 @@
+package com.lec.ex01_basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+/*
+	JDBC를 이용한 Java와 DB 연동하기
+	
+	Java와 DB를 연동하기위해서는 각 RDBMS의 버전에 맞는 JRE실행환경 라이브러리를 Java프로젝트에
+	추가해야 한다. JDBC드라이버는 DB버전에 맞는 JDBC드라이버(오라클은 ojdbc8.jar등을)를 추가해야 한다.
+	(Oracle JDBC의 버전별 참고 사이트 https://oingdaddy.tistory.com/372)
+	
+	A. 라이브러리를 추가하는 방법
+	   1. Java Project 우클릴
+	   2. Build Path > Add Build Path
+	      or Build Path > Configure Build Path >(tab)Libraries > (button) Add Jars... > (button) Apply & Close
+	      
+    B. JDBC 프로그램 작성단계
+    
+       1. JDBC 드라이버 로딩(DB에 따라 드라이버가 상이)
+          
+          a. Oracle  : Class.forName("oracle.jdbc.OracleDriver")
+          b. mariadb : Class.forName("org.mariadb.jdbc.Driver") 
+          c. mysql   : Class.forName("com.mysql.jdbc.Driver") 
+          
+          * Class.forName()메서드는 클래스파일(*.class)파일을 읽어서
+            자동으로 객체를 생성해주는 메서드이다. 
+            DB드라이버를 로딩하면 DriverManager에 등록이 된다.
+            
+       2. Connection객체를 생성
+       
+          Connection객체에 연결하는 것은 DriverManager에 등록된 각 드라이버를 
+          getConnection()메서드를 이용해서 식별한다.
+          getConnection의 매개값은 'DB의 URL주소, 사용자ID, 비밀번호'를 전달한다.
+          연결할 떄 url식별자정보를 이요해서 Mapping을 하고 찾지 못했을 경우에는 
+          에러가 발생한다. getConnction()메서드의 결과는 Connection객체로 리턴한다.
+          
+          getConnection(String url, String user, String password);
+          
+          a. oracle  : getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr"); 
+          a. mariadb : getConnection("jdbc:mariadb://localhost:3307/db이름", "root", "12345"); 
+          a. mysql   : getConnection("jdbc:mysql://localhost:3306/db이름", "root", "12345"); 
+
+       3. Statement(Statement/PreparedStatement/CallableStatement) 
+       
+          SQL생성 및 실행을 하면 반환된 결과를 가져오게할 작업영역을 제공한다. Statement객체는
+          Connection객체의 createStatement()메서드를 사용하여 생성한다.
+          
+          이 단계부터는 JDBC드라이버에 구애를 받지 않는다. 즉, DB와 상관없이 동일한 명령으로 
+          사용할 수 있다. 단, SQL표준문법을 준수할 경우에는 동일함 SQL명령을 사용할 수 있다.
+          DB마다 고유한 SQL명령이라면 각 DB의 문법에 맞게 작성되어야 한다.
+          
+          Statement stmt = conn.createStatement();
+          PreparedStatement pstmt = conn.createStatement();
+          CallableStatement cstmt = conn.preparedCall("{call 스트어드프로시저명 (?,?,?,?}"); 
+
+       4. Query 실행
+       
+          Statement객체가 생성된 후에 Statement객체의 executeQuery(), executeUpdate()메서드를 사용하여
+          처리한다. 이 객체는 ResultSet이라는 객체를 리턴하다.
+          
+          ResultSet rs = stmt.executeQuery("select * from user");
+          ResultSet rs = pstmt.executeQuery("select * from user where id = ? and name = ?");
+          ResultSet rs = cstmt.execute();
+          
+*/
+public class JDBCConnection {
+
+	final static String DRV = "oracle.jdbc.OracleDriver";
+	final static String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	final static String USR = "hr";
+	final static String PWD = "hr";
+	
+	public static void main(String[] args) {
+
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "select * from employees where employee_id = 100";
+		
+		try {
+			Class.forName(DRV);
+			conn = DriverManager.getConnection(URL, USR, PWD);
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			rs.next();
+			
+			int employee_id = rs.getInt(1);
+			String first_name = rs.getString(2);
+			String last_name = rs.getString("LAST_NAME");
+			int salary = rs.getInt("salary");
+			
+			System.out.println(employee_id + ", " + first_name + "." + last_name + ", " + salary);
+			
+		} catch (Exception e) {
+			System.out.println("DB연결실패!!!");
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(stmt != null) stmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// dummy
+			}
+		}
+	}
+
+}
