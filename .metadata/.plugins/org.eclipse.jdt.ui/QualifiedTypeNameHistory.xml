@@ -1,2 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.lec.ex02_connector.JDBCConnector"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v1_기본.CheapRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v1_기본.StandardRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v1_기본.SuperRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v2_상속.Robot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v2_상속.CheapRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v2_상속.StandardRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v2_상속.SuperRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v3_추상화.Robot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v3_추상화.CheapRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v3_추상화.StandardRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v3_추상화.SuperRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.Robot"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.CheapRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.MissileNo"/>
+    <fullyQualifiedTypeName name="java.lang.Record"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v5_extends.Robot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v5_extends.CheapRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.inter.InterFly"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.inter.InterMissile"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.inter.InterSword"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.FlyNo"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.SwordNo"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v6_method.StandardRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v6_method.SuperRobot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.SwordWood"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v7_생성자.Robot"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.MissileYes"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.SwordLaser"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.탄도미사일"/>
+    <fullyQualifiedTypeName name="com.lec.robot.v4_인터페이스.impl.울트라짱검"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="com.lec.ex01.HashMapMain"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.lec.ex01.Student"/>
+    <fullyQualifiedTypeName name="com.lec.ex01.PropertiesMain"/>
+    <fullyQualifiedTypeName name="java.net.URLDecoder"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="javax.swing.DesktopManager"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+</qualifiedTypeNameHistroy>

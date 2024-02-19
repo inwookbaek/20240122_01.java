@@ -41,6 +41,7 @@ public class PropertiesMain {
 		
 		rs.next();
 		
+		
 		int employee_id = rs.getInt(1);
 		String first_name = rs.getString(3);
 		String last_name = rs.getString("LAST_NAME");
