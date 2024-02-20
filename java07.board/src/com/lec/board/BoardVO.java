@@ -70,4 +70,10 @@ public class BoardVO {
 	public String toString() {
 		return this.bno + "\t\t" +  this.subject + "\t\t" +  this.writer + "\t\t" +  this.content;
 	}
+
+	public String toHtml() {
+		return "<tr><td>" + this.bno + "<td>" +  this.subject + "</td><td>" 
+	         +  this.writer + "</td><td>" +  this.content + "</td></tr>";
+
+	}
 }

@@ -37,7 +37,7 @@ package com.lec.board;
 	1. create databse users
 	2. create table user(id, name, tel, ssn)
 	3. user application
-	   UserMainn. UserVO, ConnectionFactory, UserDAOService, UserDAOImpl, UserFactory, UserMen
+	   UserMain, UserVO, ConnectionFactory, UserDAOService, UserDAOImpl, UserFactory, UserMen
 
 	
 */

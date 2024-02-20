@@ -9,7 +9,7 @@ public class FileWriterMain {
 	public static void main(String[] args) throws Exception {
 		
 		File file = new File("c:/temp/야생화.txt");
-		FileWriter fw = new FileWriter(file, false);
+		FileWriter fw = new FileWriter(file, true);
 		
 		fw.write("하얗게 피어난\r\n");
 		fw.write("장미꽃 하나가\r\n");
